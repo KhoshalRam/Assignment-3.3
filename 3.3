@@ -1,0 +1,85 @@
+List the components of Hadoop 2.x.
+
+Hadoop consitutes of three Major Components. They are:
+    1.HDFS
+    2.YARN
+    3.MapReduce
+
+Hadoop 2.x components follows the hadoop architecture to interact with each other and to work in parallel and fault tolerant model.
+
+HDFS:
+  The Hadoop Distributed File System is a distributed file system which is designed to run on a commodity hardware which means it does not need
+      expensive and reliable hardware. It can run on clusters of commodity hardware. Hadoop has many similarities with the existing file systems with few significant differences. It is highly fault-tolerant and i    s   
+      highly designed to be deployable on relatively inexpensive hardwares. 
+ 
+ Features of HDFS:
+      Hardware Failures:
+           There are a huge number of components and that each components and that each component has a significant probability of failure which 
+          means that some component of HDFS is always non-functional.  Thus the architectural goal of HDFS is to detect faults quickly and recover automatically .
+      
+      Streaming Data Acess:
+          Applications that run on HDFS need streaming access to their sets. They are not general prupose applications that run on general purpose distributed file systems. It is designed more for batch processing
+          rather than interactive use by users. The major aspect is the high data access rather that inability to access data.
+                
+      Large Data sets:
+          The HDFS must be able support large volumes of data in a single instance.Applications that run on HDFS have large
+          data sets (a collection of related sets of information) that is composed of 
+          seperate elements but can be manipulated as a single unit by a computer. A HDFS file is generally GB(giga-bytes) and 
+          TB(tera-bytes) in size. 
+                
+      Portability:
+          HDFS is designed in such a way that it is easily portable from one platform to another.
+          This helps in the wide-spread adoption of HDFS as a platform of choice for large sets of 
+          applications. 
+
+
+YARN:
+      The yarn fits into the Hadoop and enables the Hadoop to become a general-purpose platform for data processing.
+      It has several processing sub-components/features. That are explained below:
+      
+      a) Distributed storage: Nothing has changed here with the shift from Mapreduce to YARN-HDFS is still the storage layer 
+          for Hadoop.
+
+      b) Resource management: This enables YARN to any processing framework written for Hadoop, including Mapreduce.
+      
+      c) Processing framework:  Yarn is a general purpose resource management facility and it can allocate cluster 
+         resources to any data processing framework written for Hadoop. The processing framework then handles application runtime issues.
+         To maintain the compatibility for all the code that was developed for hadoop 1.x, Mapreduce serves as the first framework available
+         for use on Yarn.
+      
+      d) Application Programming Interface(API):
+              API works with the support of additional processing frameworks.  
+              
+  MapReduce:
+      To understand the capabilities of Hadoop MapReduce we must first learn to differentiate between MapReduce and implementation of MapReduce. 
+      Mapreduce is a Distributed Data Processing Algorithm which follows the google white paper technology.
+      Map reduce algorithm is mainly useful to process to process huge amount of data in parallel, reliable and efficient way in cluster 
+      environments.It uses "DIVIDE AND CONQUER" technique to process large amount of data. It divides input tasks into smaller tasks to execute them in parallel.
+      
+      MapReduce Algorithm Steps:
+      MapReduce algorithm uses the following three steps:
+        1. Map Function
+        2. Shuffle Function
+        3. Reduce Function
+        
+ 1. Map Function:
+    Map function is the first step in MapReduce Algorithm. It takes the i/p task and divides them into smaller and simpler sub-tasks and performs
+    computation what is required in parallel.
+    It has two sub-steps. They are:
+                                a.Splitting- takes input Dataset from source and divides them iinto smaller Sub-Datasets.
+                                b.Mapping-takes these smaller sub-datasets and perform the required action on each Sub-Datasets.
+        
+2.Shuffle Function:
+    It is the second stage in MapReduce Algorithm. Shuffle Function is also known as Combine Function.
+    It has two sub-steps. they are:
+                                a.Merging- combines all key-value points which have the same keys.
+                                b.Sorting- takes input from Merging step and sort all key-value pairs by using keys.
+                                
+3.Reduce Function:
+    It is the final step in the Mapreduce Algorithm. It performs only one step:
+                                a. It takes list of sorted pairs from Shuffle Function and perform reduce operation. 
+                                
+                                
+                                
+// The concept of Mapreduce algorithm can be explained with the help of the files attached to this document.//
+                                
